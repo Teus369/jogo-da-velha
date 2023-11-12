@@ -146,3 +146,66 @@
   .show-winning-message {
     display: flex;
   }
+
+  .info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Espaçamento para o placar */
+  }
+  
+  .score-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .score {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .restart-score {
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .restart-score:hover {
+    background-color: #346bad;
+  }
+  
+  .rules-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 18rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px; /* Adicione um espaçamento à direita */
+  }
+  
+  .info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+  }

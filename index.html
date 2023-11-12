@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt-br">
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Jogo da Velha</title>
-  </head>
-  <body>
-    <div class="board" data-board>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
+</head>
+
+<body>
+    <div class="container">
+        <div class="board" data-board>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <div class="info-panel">
+            <div class="winning-message" data-winning-message>
+                <p class="winning-message-text" data-winning-message-text>X Venceu!</p>
+                <button class="winning-message-button" data-restart-button>
+                    Reiniciar!
+                </button>
+            </div>
+            <div class="score-panel">
+                <h2>Placar</h2>
+                <div class="score" data-score-x> X: 0</div>
+                <div class="score" data-score-circle> Círculo: 0</div>
+                <button class="restart-score" data-restart-score> Reiniciar Placar</button>
+            </div>
+            <div class="rules-panel">
+                <h2>Regras do Jogo da Velha</h2>
+                <p>
+                    O jogo da velha é um jogo de estratégia para dois jogadores em um tabuleiro 3x3. Os jogadores <br>
+                    alternam turnos, colocando seus símbolos ("X" ou "O") em casas vazias. O objetivo é formar uma linha
+                    de três símbolos consecutivos, seja na horizontal, vertical ou diagonal. O jogador que consegue essa
+                    façanha é declarado vencedor. Se todas as casas são preenchidas e nenhum jogador atinge a condição
+                    de vitória, o jogo termina em empate. O jogo continua até que um jogador vença, ocorra um empate ou
+                    seja decidido encerrar.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="winning-message" data-winning-message>
-      <p class="winning-message-text" data-winning-message-text>X Venceu!</p>
-      <button class="winning-message-button" data-restart-button>
-        Reiniciar!
-      </button>
-    </div>
     <script src="scripts.js"></script>
-  </body>
+</body>
+
 </html>

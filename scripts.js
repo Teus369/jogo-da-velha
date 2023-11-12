@@ -5,8 +5,13 @@ const winningMessageTextElement = document.querySelector(
 );
 const winningMessage = document.querySelector("[data-winning-message]");
 const restartButton = document.querySelector("[data-restart-button]");
+const scoreXElement = document.querySelector("[data-score-x]");
+const scoreCircleElement = document.querySelector("[data-score-circle]");
+const restartScoreButton = document.querySelector("[data-restart-score]");
 
 let isCircleTurn;
+let scoreX = 0;
+let scoreCircle = 0;
 
 const winningCombinations = [
   [0, 1, 2],
@@ -34,6 +39,11 @@ const startGame = () => {
 };
 
 const endGame = (isDraw) => {
+  if (!isDraw) {
+    isCircleTurn ? (scoreCircle += 1) : (scoreX += 1);
+    updateScore();
+  }
+
   if (isDraw) {
     winningMessageTextElement.innerText = "Empate!";
   } else {
@@ -44,6 +54,17 @@ const endGame = (isDraw) => {
 
   winningMessage.classList.add("show-winning-message");
 };
+
+const updateScore = () => {
+  scoreXElement.innerText = `X: ${scoreX}`;
+  scoreCircleElement.innerText = `Círculo: ${scoreCircle}`;
+};
+
+restartScoreButton.addEventListener("click", () => {
+  scoreX = 0;
+  scoreCircle = 0;
+  updateScore();
+});
 
 const checkForWin = (currentPlayer) => {
   return winningCombinations.some((combination) => {
@@ -81,16 +102,12 @@ const swapTurns = () => {
 };
 
 const handleClick = (e) => {
-  // Colocar a marca (X ou Círculo)
   const cell = e.target;
   const classToAdd = isCircleTurn ? "circle" : "x";
 
   placeMark(cell, classToAdd);
 
-  // Verificar por vitória
   const isWin = checkForWin(classToAdd);
-
-  // Verificar por empate
   const isDraw = checkForDraw();
 
   if (isWin) {
@@ -98,7 +115,6 @@ const handleClick = (e) => {
   } else if (isDraw) {
     endGame(true);
   } else {
-    // Mudar símbolo
     swapTurns();
   }
 };
