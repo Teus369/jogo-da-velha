@@ -12,6 +12,8 @@
       rgba(65, 185, 131, 1) 0%,
       rgba(0, 212, 255, 1) 100%
     );
+    font-family: Arial, Helvetica, sans-serif;
+
   }
   
   .board {
@@ -208,4 +210,76 @@
   p {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width:789px){
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .container {
+        flex-direction: column; 
+        height: 100vh;
+        padding: 20px;
+    }
+    
+    .board {
+        display: grid;
+        width: 95%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+    
+    .score-panel {
+        width: 75%;
+    }
+
+    .restart-score {
+        font-size: 1.2rem;
+    }
+    
+    .cell {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .winning-message-text {
+        font-size: 2rem;
+    }
+    
+    .winning-message-button {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+    
+    .info-panel {
+        width: 100%;
+        margin-top: 20px; 
+        padding-bottom: 3rem;
+    }
+
+    .rules-panel {
+        width: 95%;
+    }
+
+    .cell.circle::before, .cell.circle::after, .board.circle .cell:not(.x):not(.circle):hover::after, .board.circle .cell:not(.x):not(.circle):hover::after {
+        height: calc(116px * 0.9);
+    width: calc(116px * 0.9);
+    }
+
+    .cell.x::before, .cell.x::after, .board.x .cell:not(.x):not(.circle):hover::after, .board.x .cell:not(.x):not(.circle):hover::before {
+        height: calc(128px * 0.15);
+        width: calc(128px * 0.9);
+    }
+
+
   }
